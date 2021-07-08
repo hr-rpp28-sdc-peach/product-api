@@ -1,0 +1,23 @@
+{
+  "name": "hr-rpp28-sdc-peach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hr-rpp28-sdc-peach/hr-rpp28-sdc-peach.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hr-rpp28-sdc-peach/hr-rpp28-sdc-peach/issues"
+  },
+  "homepage": "https://github.com/hr-rpp28-sdc-peach/hr-rpp28-sdc-peach#readme",
+  "dependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
