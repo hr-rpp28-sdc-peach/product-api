@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test-watch": "npm test -- --watch",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -19,6 +20,31 @@
   "homepage": "https://github.com/hr-rpp28-sdc-peach/hr-rpp28-sdc-peach#readme",
   "dependencies": {
     "mongodb": "^3.6.10",
+    "node-notifier": "^10.0.0",
     "nodemon": "^2.0.9"
+  },
+  "jest": {
+    "verbose": true,
+    "notify": true,
+    "collectCoverage": true,
+    "testEnvironment": "node",
+    "modulePaths": [
+      "<rootDir>/server"
+    ],
+    "roots": [
+      "<rootDir>/__tests__"
+    ],
+    "testPathIgnorePatterns": [
+      "__tests__/(fixtures|__mocks__)/"
+    ],
+    "coverageReporters": [
+      "html",
+      "text",
+      "text-summary"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.3"
   }
 }

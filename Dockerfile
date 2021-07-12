@@ -1,0 +1,5 @@
+FROM node:8.4
+COPY .
+WORKDIR /
+RUN npm install
+EXPOSE 3000

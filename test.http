@@ -1,8 +1,1 @@
-POST http://localhost:6000/products
-
-content-type: application/json
-
-{
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-}
+GET http://localhost:6000/products/200/related
