@@ -13,8 +13,11 @@ route.post("/", async (req,res) =>{
   }
 })
 route.get("/", async (req,res) => {
+  let page = (Number(req.query.page))|| 1;
+  let count = (Number(req.query.count))||5;
   try {
-    const posts = await postModel.findAll();
+    console.log(page,count)
+    const posts = await postModel.findAll(page,count);
     res.status(200).json(posts)
   }catch(error) {
     res.status(500).send()

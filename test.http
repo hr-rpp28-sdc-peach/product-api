@@ -1,1 +1,2 @@
-GET http://localhost:6000/products/200/related
+GET http://localhost:6000/products?page=4&count=3
+
