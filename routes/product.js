@@ -16,7 +16,6 @@ route.get("/", async (req,res) => {
   let page = (Number(req.query.page))|| 1;
   let count = (Number(req.query.count))||5;
   try {
-    console.log(page,count)
     const posts = await postModel.findAll(page,count);
     res.status(200).json(posts)
   }catch(error) {

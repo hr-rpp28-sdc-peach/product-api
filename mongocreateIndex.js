@@ -1,0 +1,6 @@
+db.getCollection('features').createIndex({product_id:1})
+db.getCollection('photos').createIndex({styleId:1})
+db.getCollection('products').createIndex({id:1})
+db.getCollection('related').createIndex({current_product_id:1})
+db.getCollection('skus').createIndex({styleId:1})
+db.getCollection('styles').createIndex({productId:1})

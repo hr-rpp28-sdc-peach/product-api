@@ -41,8 +41,8 @@ exports.findStyle= async(id) =>{
 
      const ans = await Promise.all(result.map( async (cur)=>{
        let {id,default_style,...temp} = cur;
-       let sku = await colSku.find({"styleId":cur["id"] }).toArray();
-       let rawPhotos = await colPhoto.find({"styleId":cur["id"]+"" }).toArray();
+       let sku = await colSku.find({"styleId":id }).toArray();
+       let rawPhotos = await colPhoto.find({"styleId":id+"" }).toArray();
        let skuObj={};
        let photos = rawPhotos.map(obj=>{
          return {"thumbnail_url": obj["thumbnail_url"], "url": obj["url"]}
@@ -84,7 +84,6 @@ exports.getStyle = async (id)=> {
   try {
     const col = await relatedCollection();
     const result =await col.find({"current_product_id": id}).project({"related_product_id":1,"_id":0}).toArray();
-
     return result.map(cur=>cur["related_product_id"]);
  } catch(error){
 

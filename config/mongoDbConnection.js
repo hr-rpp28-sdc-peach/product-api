@@ -1,5 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 
+// const url = "mongodb://host.docker.internal:27017";
 const url = "mongodb://localhost:27017";
 
 const dbName = "product";
@@ -14,6 +15,7 @@ async function connectDb() {
     _db = await client.db(dbName);
 
     } catch(error) {
+      console.log(error)
     throw "db connect error"
     }
   }

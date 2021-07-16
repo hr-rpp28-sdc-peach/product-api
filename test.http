@@ -1,2 +1,1 @@
-GET http://localhost:6000/products?page=4&count=3
-
+GET http://127.0.0.1:3000/products
