@@ -1,1 +1,3 @@
-GET http://127.0.0.1:3000/products
+# GET http://44.193.25.186:3000/products
+
+GET http://localhost:3000/products/127/styles
