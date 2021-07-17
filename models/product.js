@@ -38,6 +38,7 @@ exports.findStyle= async(id) =>{
      const result =await col.find({"productId": id}).project({"productId":0,"_id":0}).toArray();
      const colSku = await skuCollection();
      const colPhoto = await photoCollection();
+     const temp = await colPhoto.createIndex({"styleId":1},{background: true})
 
      const ans = await Promise.all(result.map( async (cur)=>{
        let {id,default_style,...temp} = cur;
