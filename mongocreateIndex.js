@@ -1,6 +1,8 @@
-db.getCollection('features').createIndex({product_id:1})
-db.getCollection('photos').createIndex({styleId:1})
-db.getCollection('products').createIndex({id:1})
-db.getCollection('related').createIndex({current_product_id:1})
-db.getCollection('skus').createIndex({styleId:1})
-db.getCollection('styles').createIndex({productId:1})
+const photoC = require("./config/mongoDbConnection").getCollection("photos")
+
+async function foo(){
+const photo = await  photoC();
+const res =  await photo.createIndex({"styleId":-1},{background: true})
+console.log("success")
+}
+foo()
