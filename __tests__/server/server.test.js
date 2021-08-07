@@ -1,28 +1,36 @@
-
-test('return sum of a+b', () => {
+const app = require('/Users/haoshenli/Desktop/Hack/product-api/server.js')
+const supertest = require('supertest');
+const apptest = supertest(app)
+it ('return sum of a+b', () => {
 
   const total = 1+2;
 
   expect(total).toBe(3)
 })
 
-var request = require('supertest');
-describe('loading express', function () {
-  var route;
-  beforeEach(function () {
-    route = require('../../routes/product');
-  });
-  afterEach(function () {
+it('gets the test endpoint', async () => {
+  const response = await apptest.get('/')
+  expect(response.status).toBe(200)
 
-  });
-  it('responds to /', function testSlash(done) {
-    request(route)
-      .get('/')
-      .expect(201, done);
-  });
-  it('404 everything else', function testPath(done) {
-    request(route)
-      .get('/foo/bar')
-      .expect(404, done);
-  });
-});
+ })
+
+
+ it('gets the products', async () => {
+  const response = await apptest.get('/products')
+  expect(response.body.length).toBe(5)
+
+ })
+
+// test('should return a 200 response', function(done){
+//   api.get('/')
+//   .set('Accept', 'application/json')
+//   .expect(200, done);
+// })
+// test('should be an object of product with id=1', function(done){
+//   api.get('/products/1')
+//   .set('Accept', 'application/json')
+//   .expect(200)
+//   .end(function(err, res){
+//     expect(res.body.name).toBe("Camo Onesie");
+//   })
+// })

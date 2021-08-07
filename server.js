@@ -8,8 +8,12 @@ app.use(bodyParser.json())
 routes(app)
 
 app.get("/", (req, res) => {
-  res.send("Hellp World!");
+  res.status(200).send("Hellp World!");
 })
+// app.listen(port, () => {
+//   console.log(`Example app listening at http://localhost:${port}`)
+// })
+module.exports = app
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+    console.log(`Example app listening at http://localhost:${port}`)
+  })

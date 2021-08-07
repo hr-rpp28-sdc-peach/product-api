@@ -15,7 +15,7 @@ async function connectDb() {
     _db = await client.db(dbName);
 
     } catch(error) {
-      console.log(error)
+
     throw "db connect error"
     }
   }
@@ -30,7 +30,7 @@ exports.getCollection = (collection) => {
       const db = await connectDb();
       _col =  await db.collection(collection)
       } catch(error) {
-        console.log(error)
+
         throw "db collection error"
       }
     }
