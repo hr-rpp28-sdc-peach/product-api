@@ -22,11 +22,10 @@ exports.findId= async(id) =>{
      const result =await col.findOne({"id": id});
      const feature = await fea.find({"product_id": id},).project({"feature": 1 ,"value":1,"_id":0}).toArray()
      let {_id, ...ans} = result
-
      ans["features"]=feature;
      return ans;
   } catch(error){
-    cons
+
     throw error;
 
   }
@@ -96,7 +95,6 @@ exports.getRelated = async (id)=> {
   try {
     const col = await relatedCollection();
     const result =await col.find({"current_product_id": id}).project({"related_product_id":1,"_id":0}).toArray();
-
     return result.map(cur=>cur["related_product_id"]);
  } catch(error){
 

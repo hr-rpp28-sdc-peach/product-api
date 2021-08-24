@@ -1,7 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 
 // const url = "mongodb://host.docker.internal:27017";
-const url = "mongodb://localhost:27017";
+const url = "mongodb://35.174.205.247:27017";
 
 const dbName = "product";
 

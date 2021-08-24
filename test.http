@@ -1,15 +1,5 @@
-GET http://100.26.253.12:3000/products/
+GET http://35.174.205.247:3000/products/30
 ###
-GET http://localhost:4000/attendees
-
+GET http://localhost:3000/products/50
 ###
-POST http://localhost:4000/attendees
-content-type: application/json
-
-{
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "shirt": "XS",
-      "skillLevel": "beginner"
-}
+GET http://localhost:3000/products/30

@@ -22,10 +22,12 @@
   "dependencies": {
     "csvtojson": "^2.0.10",
     "express": "^4.17.1",
+    "k6": "^0.0.0",
     "mongo": "^0.1.0",
     "mongodb": "^3.6.10",
     "node-notifier": "^10.0.0",
-    "nodemon": "^2.0.9"
+    "nodemon": "^2.0.9",
+    "redis": "^3.1.2"
   },
   "jest": {
     "verbose": true,
