@@ -1,5 +1,16 @@
-GET http://35.174.205.247:3000/products/30
+GET http://54.175.189.250:3000/products/30/related
 ###
 GET http://localhost:3000/products/50
 ###
-GET http://localhost:3000/products/30
+GET http://localhost:3000/my-profile
+###
+
+POST http://localhost:3000/rsvps HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "sample",
+    "lastName": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "email": "a@a.com",
+    "guests": 10
+}

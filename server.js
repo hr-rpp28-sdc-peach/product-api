@@ -10,6 +10,10 @@ routes(app)
 app.get("/", (req, res) => {
   res.status(200).send("Hellp World!");
 })
+app.get("/loaderio-012944cb1ea75e340f5e7ab7a9e8a374/", (req, res) => {
+  res.status(200).send("loaderio-012944cb1ea75e340f5e7ab7a9e8a374");
+})
+
 // app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`)
 // })
