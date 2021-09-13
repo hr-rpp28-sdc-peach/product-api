@@ -18,7 +18,7 @@ export default function () {
   let responses = http.batch([
     [
       'GET',
-      `http://54.175.189.250:3000/products/30/related`,
+      `http://3.94.181.112 :3000/products/30/related`,
     ]
 
   ]);

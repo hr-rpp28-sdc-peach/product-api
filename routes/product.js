@@ -77,10 +77,28 @@ route.get("/:product_id/styles", async (req,res) => {
 route.get("/:product_id/related", async (req,res) => {
   let productId = Number(req.params.product_id);
 
+  // try {
+  //   const posts = await postModel.getRelated(productId);
+  //   res.status(200).json(posts)
+  // }
   try {
-    const posts = await postModel.getRelated(productId);
-    res.status(200).json(posts)
-  }catch(error) {
+    let key= "related"+productId;
+    client.get(key, async (err, jobs) =>{
+      if (err) throw err;
+      if (jobs) {res.status(200).json(JSON.parse(jobs))
+      }
+     else {
+
+    const post = await postModel.getRelated(productId);
+    client.setex(key,600, JSON.stringify(post))
+    res.status(200).json(post)
+    }
+
+  })
+  }
+
+
+  catch(error) {
 
     res.status(500).send(error)
   }
